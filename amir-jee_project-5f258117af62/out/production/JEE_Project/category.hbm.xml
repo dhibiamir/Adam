@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="category" table="categories">
+        <meta attribute="class-description">
+            This class contains the employee detail.
+        </meta>
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+<!--
+        <set name="product" cascade="all">
+            <key column="category_id"/>
+            <one-to-many class="Product"/>
+        </set>
+-->
+        <property name="name" column="name" type="string"/>
+        <property name="description" column="description" type="string"/>
+        <property name="shortDescription" column="short_description" type="string"/>
+        <property name="created_at" column="created_at" type="date"/>
+    </class>
+</hibernate-mapping>
